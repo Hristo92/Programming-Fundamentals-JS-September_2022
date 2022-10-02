@@ -1,17 +1,20 @@
 function condenseArrayToNumber(array){
 
-    let condensed = [];
-    let numbers = [];
+            while(array.length > 1){
 
-    for (let i = 0; i < array.length - 1; i++) {
+                let condensed = Array(array.length-1);
 
-        numbers.push(array[i]);
-        for (let j = 0; j < numbers.length - 1; j++) {
-            condensed+=j;
-            
-        }
-    }
-    console.log(condensed);
+                for (let i = 0; i < array.length - 1; i++) {
+
+                    condensed[i] = Number(array[i]) + Number(array[i + 1]);
+
+                }
+                array = condensed;
+
+            }
+            console.log(array[0]);
 
 }
 condenseArrayToNumber([2,10,3]);
+condenseArrayToNumber([5,0,4,1,2]);
+condenseArrayToNumber([1]);
